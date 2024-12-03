@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Input Example</title>
+    <style>
+        .input-container {
+            position: relative;
+            width: 200px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 5px 25px 5px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .input-container .price-label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .price-label{
+            margin-left: 120px;
+        }
+
+        /* Скрыть текст "Price" и цифру 0 при фокусе */
+        .input-container  .price-label:focus  {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="input-container">
+        <input id="price" type="text" value="0" onfocus="clearInput()" onblur="restorePriceLabel()" oninput="validateInput()" />
+        <span class="price-label">Price from</span>
+    </div>
+
+    <script>
+        // Функция для очистки значения и скрытия текста "Price" при фокусе
+        function clearInput() {
+            const input = document.getElementById('price');
+            const label = document.querySelector('.price-label');
+            // Убираем начальный 0 при фокусе
+            if (input.value === '0') {
+                input.value = '';
+            }
+            // Скрываем текст "Price"
+            label.style.opacity = '0';
+        }
+
+        // Функция для восстановления текста "Price", если поле пустое
+        function restorePriceLabel() {
+            const input = document.getElementById('price');
+            const label = document.querySelector('.price-label');
+            if (input.value === '' || input.value === '0') {
+                label.style.opacity = '1'; // Показать текст "Price", если поле пустое или 0
+                input.value='0';
+            }
+        }
+
+        // Функция для валидации ввода: только цифры
+        function validateInput() {
+            const input = document.getElementById('price');
+            let value = input.value;
+
+            // Убираем все символы, кроме цифр
+            value = value.replace(/[^0-9]/g, '');
+
+            // Если поле пустое, ставим 0
+            if (value === '') {
+                value = '0';
+            }
+
+            input.value = value;
+        }
+    </script>
+
+</body>
+</html>
