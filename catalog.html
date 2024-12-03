@@ -13,17 +13,29 @@
     <header>
         <a href="index.html"><img src="img/logo/LOGO 1.svg" alt=""></a>
 
-        <section>
+        <section id="menu">
             <div class="circul">
 
-                <a href=""> <img src="img/icon/monkey.svg" alt=""></a>
+                <img src="img/icon/monkey.svg" alt="">
 
 
             </div>
-            <a href="">
-                <h4 id="user">Yana Tamkovich</h4>
-            </a>
+
+            <h4 id="user">Guest</h4>
+
         </section>
+        <div id="overlay" class="overlay"></div>
+        <div id="registerPanel" class="register-panel">
+
+            <h2>Register</h2>
+            <button id="closeBtn" class="close-btn">✖</button>
+            <form action="#">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Username" required>
+                <button type="submit">Create an account</button>
+            </form>
+        </div>
         <div class="text__input">
             <img src="img/icon/lupa.svg" alt=""> <input type="text" class="search-zone" value="Search for anything..."
                 onfocus="this.value=''" onblur="if(this.value === '') this.value='Search for anything...'">
@@ -173,7 +185,7 @@
 
 
         </section>
-
+<script src="register.js"></script>
 </body>
 
 </html>
