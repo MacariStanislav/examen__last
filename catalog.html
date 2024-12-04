@@ -63,18 +63,12 @@
             </nav>
 
             <div class="image__sale">
-                <img src="img/catalog__img/img.png" alt="" class="big__img">
-                <ul>
-                    <li><img src="img/catalog__img/_mini.png" alt=""></li>
-                    <li><img src="img/catalog__img/_mini.png" alt=""></li>
-                    <li><img src="img/catalog__img/_mini.png" alt=""></li>
-                    <li><img src="img/catalog__img/_mini.png" alt=""></li>
-                </ul>
-
+                <img src="" alt="" class="big__img" id="product-image">
+              
                 <div class="catalog__sum">
-                    <h4>Bouncing sneaker Hermès</h4>
-                    <span>599$</span>
-                    <p>Color: <span>Blanc</span></p>
+                    <h4 id="product-name"></h4>
+                    <span id="product-price"></span>
+                    <p>Color: <span id="color">Blanc</span></p>
                     <p>
                         Sizes:
 
@@ -88,8 +82,7 @@
                             5.5
                         </button>
                     </p>
-                    <p>Sneaker in air mesh and suede goatskin.<br>
-                        Light sole with contrasting design for a versatile and <br>modern look.</p>
+                    <p id="product-description"></p>
                     <div>
                         <button>
                             Add to cart
@@ -99,8 +92,8 @@
                         </button>
                     </div>
                     <p>
-                        <a href="">19 people purchased</a>
-                        <a href="">Find in a store</a>
+                        <a href="#" id="pointer"></a>
+                        <a href="#">Find in a store</a>
                     </p>
                 </div>
 
@@ -110,8 +103,8 @@
         <section id="section2">
             <h4>Related products</h4>
             <ul>
-                <li>
-                    <a href="catalog.html">
+                <li class="product" data-id="16" >
+                    <a href="#" class="buy-button" >
                         <img src="img/nike/image.png" alt="">
                         <div>
                             <p>Nike ZoomX 2023</p>
@@ -124,8 +117,8 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
+                <li class="product" data-id="17" >
+                    <a href="#" class="buy-button" >
                         <img src="img/nike/image.png" alt="">
                         <div>
                             <p>Nike ZoomX 2023</p>
@@ -138,8 +131,8 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
+                <li class="product" data-id="18" >
+                    <a href="#" class="buy-button" >
                         <img src="img/nike/image.png" alt="">
                         <div>
                             <p>Nike ZoomX 2023</p>
@@ -152,8 +145,8 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
+                <li class="product" data-id="19" >
+                    <a href="#" class="buy-button" >
                         <img src="img/nike/image.png" alt="">
                         <div>
                             <p>Nike ZoomX 2023</p>
@@ -166,8 +159,8 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
+                <li class="product" data-id="20" >
+                    <a href="#" class="buy-button" >
                         <img src="img/nike/image.png" alt="">
                         <div>
                             <p>Nike ZoomX 2023</p>
@@ -181,12 +174,14 @@
                     </a>
                 </li>
             </ul>
-            <button>See more</button>
+            <button><a href="see_more.html" style="color: white;">See more</a></button>
 
 
         </section>
         </main>
-<script src="register.js"></script>
+<script src="js/register.js"></script>
+<script src="js/product_elemet.js"></script>
+<script src="js/select_data-id.js"></script>
 </body>
 
 </html>
