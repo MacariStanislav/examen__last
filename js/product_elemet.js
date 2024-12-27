@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);//Здесь мы с�
 const productId = params.get('id');
 
 const products = {
-    1: {
+    1: { 
         name: 'Nike ZoomX 2023',
         description: 'Nike ZoomX 2023.\n Breathable mesh with sleek, responsive cushioning.\nSleek sole for speed and comfort.',
         price: '79$',
@@ -133,7 +133,7 @@ const products = {
     17: {
         name: 'Reebok Zig Kinetica 2023',
         description: 'Futuristic design with responsive cushioning for speed.\nLightweight sole with bold style and flexibility.',
-        price: '$28.99',
+        price: '$30.99',
         color: 'grey',
         image: 'img/sneakers/korean/He535e4c5a6004157b6103df755cc6e5dc.avif',
         pointer: '9 people purchased'
@@ -141,7 +141,7 @@ const products = {
     18: {
         name: 'Under Armour HOVR Phantom 2023',
         description: 'Energy-returning foam for enhanced speed.\nSleek knit upper with superior breathability and comfort.',
-        price: '$28.99',
+        price: '$82.99',
         color: 'white',
         image: 'img/sneakers/korean/He535e4c5a6004157b6103df755cc6e5dc.avif',
         pointer: '11 people purchased'
@@ -149,7 +149,7 @@ const products = {
     19: {
         name: 'Asics Gel-Kayano 30',
         description: 'Supportive, stable design with Gel cushioning.\nLightweight sole for maximum comfort and smooth transitions.',
-        price: '$28.99',
+        price: '$60.99',
         color: 'orange',
         image: 'img/sneakers/korean/He535e4c5a6004157b6103df755cc6e5dc.avif',
         pointer: '8 people purchased'
@@ -157,7 +157,7 @@ const products = {
     20: {
         name: 'Saucony Endorphin Pro 2023',
         description: 'Fast, responsive ride with powerful SPEEDROLL technology.\nLightweight mesh upper for breathability and performance.',
-        price: '$28.99',
+        price: '$68.99',
         color: 'pink',
         image: 'img/sneakers/korean/He535e4c5a6004157b6103df755cc6e5dc.avif',
         pointer: '20 people purchased'
@@ -167,17 +167,21 @@ const products = {
 
 const product = products[productId];
 
-if (product) {//Проверяем, существует ли продукт с таким ID.
+if (product) {
     document.getElementById('product-name').innerText = product.name;
     document.getElementById('product-price').innerText = product.price;
     document.getElementById('product-image').src = product.image;
     document.getElementById('product-description').innerText = product.description;
     document.getElementById('color').innerText = product.color;
     document.getElementById('pointer').innerText = product.pointer;
+    document.getElementById('card').innerTesxt = product.card;
+    document.getElementById('favorit').innerText = product.favorit;
 } else {
     document.getElementById('product-name').innerText = 'Не братух сегодня без товара understand?';
+    document.getElementById('color').innerText = 'no';
+    document.getElementById('card').style.display = 'none';
+    document.getElementById('favorit').style.display = 'none';
+    
+
 }
 
-document.getElementById('back-button').addEventListener('click', () => {
-    window.history.back();
-});
